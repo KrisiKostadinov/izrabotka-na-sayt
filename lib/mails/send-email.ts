@@ -26,11 +26,11 @@ export async function sendEmail({
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_SERVER,
     secure: true,
+    port: Number(process.env.EMAIL_SERVER_PORT) || 465,
     auth: {
       user: process.env.EMAIL_SERVER_USERNAME,
       pass: process.env.EMAIL_SERVER_PASSWORD,
     },
-    port: Number(process.env.EMAIL_SERVER_PORT) || 465,
   });
 
   try {
