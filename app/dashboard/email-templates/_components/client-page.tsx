@@ -5,7 +5,7 @@ import { MenuIcon, SaveIcon } from "lucide-react";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
-import { EmailTemplate } from "@prisma/client";
+import type { EmailTemplate } from "@prisma/client";
 import PageHeader from "@/app/dashboard/_components/page-header";
 import PageWrapper from "@/app/dashboard/_components/page-wrapper";
 import {
