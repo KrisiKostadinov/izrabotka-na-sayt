@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "db:migrate": "npx prisma migrate db dev",
-    "postinstall": "prisma generate"
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
