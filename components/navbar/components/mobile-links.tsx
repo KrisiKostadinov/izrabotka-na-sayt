@@ -1,7 +1,7 @@
 "use client";
 
 import { ComponentPropsWithoutRef, useState } from "react";
-import { MenuIcon, SearchIcon, ShoppingBagIcon, UserIcon } from "lucide-react";
+import { MenuIcon, SearchIcon, UserIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { NavbarLink } from "@/components/navbar/types";

@@ -1,13 +1,8 @@
 import { navbarLinks } from "@/components/navbar/data";
 import DesktopLinks from "@/components/navbar/components/desktop-links";
 import MobileLinks from "@/components/navbar/components/mobile-links";
-import { Session } from "next-auth";
 
-type NavbarProps = {
-  session: Session | null;
-}
-
-export default function Navbar({ session }: NavbarProps) {
+export default function Navbar() {
   return (
     <div className="bg-white border h-16 max-sm:px-3">
       <DesktopLinks
