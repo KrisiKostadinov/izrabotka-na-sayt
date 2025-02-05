@@ -35,7 +35,7 @@ export async function sendEmail({
 
   try {
     const emailOptions: nodemailer.SendMailOptions = {
-      from: `${process.env.WEBSITE_TITLE} <${process.env.EMAIL_SERVER_USERNAME}>`,
+      from: `${process.env.NEXT_PUBLIC_WEBSITE_TITLE} <${process.env.EMAIL_SERVER_USERNAME}>`,
       to,
       subject,
       html,

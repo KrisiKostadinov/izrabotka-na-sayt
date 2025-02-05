@@ -11,7 +11,13 @@ const NEXT_PUBLIC_SITE_URL = new URL(process.env.NEXT_PUBLIC_SITE_URL || "http:/
 export const metadata: Metadata = {
   metadataBase: NEXT_PUBLIC_SITE_URL,
   openGraph: {
-    images: "/light.png",
+    images: [
+      {
+        url: "/light.png",
+        width: 300,
+        height: 100,
+      }
+    ],
   },
 };
 

@@ -1,3 +1,4 @@
+import Container from "@/components/container";
 import data from "@/data/home.json";
 import { Metadata } from "next";
 
@@ -16,8 +17,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="container mx-auto py-10">
-      <h1 className="text-2xl font-semibold">Начало</h1>
-    </div>
+    <Container title="Начало">
+    </Container>
   );
 }

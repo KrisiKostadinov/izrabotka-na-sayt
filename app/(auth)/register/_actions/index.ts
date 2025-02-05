@@ -59,7 +59,7 @@ export const registerUser = async (values: FormSchemaProps) => {
         const link = await generateConfirmationLink(createdUser.id, token, "email-confirmation");
 
         const emailValues = {
-          website_name: process.env.WEBSITE_TITLE || "",
+          website_name: process.env.NEXT_PUBLIC_WEBSITE_TITLE || "",
           website_url: process.env.NEXT_PUBLIC_SITE_URL || "",
           current_year: new Date().getFullYear().toString() || "",
           email: values.email || "",

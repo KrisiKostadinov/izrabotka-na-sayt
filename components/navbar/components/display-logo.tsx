@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ComponentPropsWithoutRef } from "react";
@@ -9,7 +11,7 @@ export default function DisplayLogo({ ...props }: DisplayLogoProps) {
   const WEBSITE_TITLE = process.env.NEXT_PUBLIC_WEBSITE_TITLE || "";
 
   return (
-    <Link href="/" {...props} title={WEBSITE_TITLE}>
+    <Link href={"/"} {...props} title={WEBSITE_TITLE}>
       <span className="text-2xl font-semibold">
         <Image
           src={url}
