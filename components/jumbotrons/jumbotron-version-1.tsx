@@ -25,7 +25,6 @@ export default function JumbotronVersion1({
   buttonText = "",
   buttonUrl = "",
   opacity = "40",
-  height = "400",
   bgColor = "bg-black/10",
   textColor = "text-secondary",
   children,
