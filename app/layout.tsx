@@ -2,11 +2,12 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 
 import "./globals.css";
-import Navbar from "@/components/navbar";
 import { ToastContainer } from "react-toastify";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const NEXT_PUBLIC_SITE_URL = new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000");
+const NEXT_PUBLIC_SITE_URL = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+);
 
 export const metadata: Metadata = {
   metadataBase: NEXT_PUBLIC_SITE_URL,
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
         url: "/light.png",
         width: 300,
         height: 100,
-      }
+      },
     ],
   },
 };
@@ -29,13 +30,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="bg">
       <body>
-        <main className="w-full min-h-screen">
-          <TooltipProvider>
-            <Navbar />
-            <ToastContainer />
-            {children}
-          </TooltipProvider>
-        </main>
+        <TooltipProvider>
+          <ToastContainer />
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   );
