@@ -3,8 +3,9 @@ import { ReactNode } from "react";
 
 import "./globals.css";
 import { auth } from "@/lib/auth";
-import Navbar from "@/components/client/navbar";
+import Navbar from "@/components/navbar";
 import { ToastContainer } from "react-toastify";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: Readonly<ReactNode>;
-}
+};
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const session = await auth();
@@ -22,9 +23,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body>
         <main className="w-full min-h-screen">
-          <Navbar session={session} />
-          <ToastContainer />
-          {children}
+          <TooltipProvider>
+            <Navbar session={session} />
+            <ToastContainer />
+            {children}
+          </TooltipProvider>
         </main>
       </body>
     </html>

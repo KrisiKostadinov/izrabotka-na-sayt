@@ -28,7 +28,7 @@ export const { auth, handlers } = NextAuth({
         }
 
         if (bcrypt.compareSync(credentials.password as string, user.password)) {
-          return { id: user.id, email: user.email };
+          return { id: user.id, email: user.email, role: user.role };
         } else {
           return null;
         }
@@ -46,7 +46,10 @@ export const { auth, handlers } = NextAuth({
       }
       return !!user;
     },
-    async session({ session }) {
+    async session({ token, session }) {
+      if (token) {
+        session.user.role = token.role;
+      }
       return session;
     },
     redirect() {
